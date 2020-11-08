@@ -1,63 +1,78 @@
-
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Varela+Round&display=swap" rel="stylesheet">
-    <title>Weather For The Homies</title>
+
+    <title>Weather Dash</title>
 </head>
 <body>
     
     <!-- Weather Dashboard Header -->
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid" style="background-color: rgb(46, 48, 51) ; color: dimgray; height: 50px">
         <div class="container">
-            <h1 class="display-5 text-center">Weather Dashboard</h1>
+            <h1 class="text-center">Weather For The Homies</h1>
         </div>
     </div>
     
-    <!-- Main Content Container -->
+    <!-- Main Content -->
     <div class="container-fluid">
-        <!-- Main Content Row -->
         <div class="row">
+
             <!-- City Search Bar -->
-            <div class="col-3 searchCol">
-                <!-- Search Form with Button -->
-                <h4>Search for a city:</h4>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="cityInput" placeholder="City">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="submit" id="citySearchBtn">
-                            <span class="fas fa-search"></span>
-                        </button>
+            <div class="col-3 searchCol" style="border-radius: 20px;">
+                <!-- Search Area & Button -->
+                <form>
+                    <h4>Search for a city:</h4>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="cityInput" placeholder="City">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="submit" id="cityBtn">
+                                <span class="fas fa-search"></span>
+                            </button>
                         </div>
                     </div>
-                    <!-- City Table List -->
-                    <div class="list-group" id="cityList"></div>                    
+                </form>
+
+                <!-- City Table List -->
+                <div class="list-group" id="cityList">
+                    <ul id="citySearchHistory" style="display: inline-block;
+                    padding: 5px;"></ul>
+                </div>                    
+            </div>
+            <!-- Weather Information Column -->
+            <div class="col-9" style ="border-radius: 20px; box-shadow: 3px 2px 5px rgb(20, 0, 0); padding: 20px; background-color: #f8f8ff;">
+                <div class="mb-3" style="width: 100%;" id="weatherInformation"></div>
+                <div id="forecastContainer" style="border-radius: 40px; margin: 30px;">
+                    <h5 class="cardTitle" id="info"></h5>
+                    <img class="cardInfo" id="pic1">
+                    <p class="cardInfo" id="temp"></p>
+                    <p class="cardInfo" id="feelsLike"></p>
+                    <p class="cardInfo" id="humidity"></p>
+                    <p class="cardInfo" id="windSpeed"></p>
+                    <p class="cardInfo" id="uvIndex"></p>
                 </div>
-                <!-- Weather Information Column -->
-                <div class="col-9">
-                    <div class="card" style="width: 100%;" id="weatherInfoContainer"></div>
-                    <div id="forecastContainer">
-                        <h5 class="cardTitle" id="city-info"></h5>
-                        <p class="card-text" id="temp"></p>
-                        <p class="card-text" id="humidity"></p>
-                        <p class="card-text" id="wind"></p>
-                        <p class="card-text" id="uvIndex"></p>
+
+                <div class="container" >
+                        <h3 style="text-align: left">Five day Forecast:</h3>
+                        <div class="row" id="dataRow" style="margin-left:auto;"></div>
                     </div>
-                </div>
-                <h3>5-day Forecast:</h3>
-                <div class="row" id="card-row" style="margin-left:auto;"></div>
+            </div>
         </div>
     </div>
+    <!-- Footer for the space the bottom -->
     <footer class="footer mt-auto py-3 text-center">
         <div class="container">
         </div>
       </footer>
-    
+
     <script src="https://kit.fontawesome.com/40b7f7a292.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./Assets/js/app.js"></script>
 </body>
 </html>
