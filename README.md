@@ -15,3 +15,5 @@
 * went with inline styling
 
 * fixed the few errors with syntax and alignment 
+
+![Weather](./Assets/weather-dash.png)
